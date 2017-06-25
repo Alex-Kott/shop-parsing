@@ -36,6 +36,12 @@ try:
 	print("Karusel was parsed")
 except:
 	print("Karusel was not parsed")
+	
+try:
+	karusel.parse()
+	print("Karusel was parsed")
+except:
+	print("Karusel was not parsed")
 
 
 
