@@ -30,7 +30,7 @@ def parse():
 	
 	for i in place:
 		row = []
-		comment = i['title']
+		comment = i['title'] + " (Карусель)"
 		address = i['address']
 		city = detect_city(i['location'])
 		schedule = i['schedule']

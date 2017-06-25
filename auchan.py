@@ -32,7 +32,7 @@ def parse():
 			row = []
 			row.append(l[0])
 			address = ''
-			comment = 'Ашан'
+			comment = ' (Ашан)'
 			schedule = ''
 			phone = ''
 			format_ = ''

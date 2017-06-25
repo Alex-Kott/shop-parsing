@@ -33,6 +33,7 @@ def parse():
 
 				item_comment = item.find_all(class_="shop-list-item__title-text")
 				comment = item_comment[0].contents[0]
+				comment += " (О'КЕЙ)"
 				row.append(comment)
 
 				item_schedule = item.find_all(class_="shop-list-item__time")

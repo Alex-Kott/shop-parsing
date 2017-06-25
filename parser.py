@@ -4,6 +4,7 @@ import korablik
 import okmarket
 import auchan
 import karusel
+import kari
 
 
 # город, адрес, коммент (название ТЦ, например), график работы, телефон, формат(?)
@@ -38,10 +39,10 @@ except:
 	print("Karusel was not parsed")
 	
 try:
-	karusel.parse()
-	print("Karusel was parsed")
+	kari.parse()
+	print("Kari was parsed")
 except:
-	print("Karusel was not parsed")
+	print("Kari was not parsed")
 
 
 
