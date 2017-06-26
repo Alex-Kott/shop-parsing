@@ -22,7 +22,8 @@ def parse():
 		city = city_arr[-1]
 		city_arr = city_arr[:-1]
 		comment = ", ".join(city_arr)
-		comment += " (Kari)"
+		comment += ""
+
 
 		line_address = li.find_all(class_="sa_line_address")[0]
 		address = line_address.contents[0]
@@ -35,6 +36,8 @@ def parse():
 		row.append(address)
 		row.append(comment)
 		row.append(schedule)
+		row.append("")
+		row.append("Кари")
 		with open('data.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
 			wr.writerow(row)

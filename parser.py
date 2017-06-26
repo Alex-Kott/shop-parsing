@@ -5,10 +5,11 @@ import okmarket
 import auchan
 import karusel
 import kari
+import dochkisinochki
 
 
 # город, адрес, коммент (название ТЦ, например), график работы, телефон, формат(?)
-fields = ['Город', 'Адрес', 'Комментарий', 'График работы', 'Телефон', 'Формат']
+fields = ['Город', 'Адрес', 'Комментарий', 'График работы', 'Телефон', 'Магазин', 'Формат']
 with open('data.csv', 'w') as file:
 	wr = csv.writer(file, dialect='excel', delimiter=';')
 	wr.writerow(fields)
@@ -43,6 +44,12 @@ try:
 	print("Kari was parsed")
 except:
 	print("Kari was not parsed")
+	
+try:
+	dochkisinochki.parse()
+	print("Dochkisinochki was parsed")
+except:
+	print("Dochkisinochki was not parsed")
 
 
 

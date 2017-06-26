@@ -42,6 +42,7 @@ def parse():
 		row.append(comment)
 		row.append(schedule)
 		row.append(phone)
+		row.append("Карусель")
 		row.append(format_)
 		with open('data.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
