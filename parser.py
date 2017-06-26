@@ -8,6 +8,7 @@ import kari
 import dochkisinochki
 import atak
 import eldorado
+import lenta
 
 
 # город, адрес, коммент (название ТЦ, например), график работы, телефон, формат(?)
@@ -64,6 +65,12 @@ try:
 	print("Eldorado was parsed")
 except:
 	print("Eldorado was not parsed")
+	
+try:
+	lenta.parse()
+	print("Lenta was parsed")
+except:
+	print("Lenta was not parsed")
 
 
 
