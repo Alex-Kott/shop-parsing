@@ -6,6 +6,7 @@ import auchan
 import karusel
 import kari
 import dochkisinochki
+import atak
 
 
 # город, адрес, коммент (название ТЦ, например), график работы, телефон, формат(?)
@@ -50,6 +51,12 @@ try:
 	print("Dochkisinochki was parsed")
 except:
 	print("Dochkisinochki was not parsed")
+	
+try:
+	atak.parse()
+	print("ATAK was parsed")
+except:
+	print("ATAK was not parsed")
 
 
 
