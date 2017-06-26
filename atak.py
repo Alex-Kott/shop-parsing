@@ -16,9 +16,6 @@ def parse():
 			continue
 		opt = BeautifulSoup(str_option, "lxml")
 		city = option.contents[0]
-		with open("test.txt", 'a') as f:
-			f.write(city+"\n")
-		f.close()
 		if city == "Выбор города":
 			continue
 		link = option['link']

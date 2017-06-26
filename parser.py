@@ -7,6 +7,7 @@ import karusel
 import kari
 import dochkisinochki
 import atak
+import eldorado
 
 
 # город, адрес, коммент (название ТЦ, например), график работы, телефон, формат(?)
@@ -57,6 +58,12 @@ try:
 	print("ATAK was parsed")
 except:
 	print("ATAK was not parsed")
+	
+try:
+	eldorado.parse()
+	print("Eldorado was parsed")
+except:
+	print("Eldorado was not parsed")
 
 
 
