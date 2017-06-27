@@ -111,10 +111,17 @@ def parse():
 		link = lst[1]
 		city = lst[2]
 		
-		giper(link, city)
-		time.sleep(0.1)
-		super(link, city)
-		time.sleep(0.1)
+		try:
+			giper(link, city)
+		except Exception as e:
+			print(str(e))
+		time.sleep(0.5)
+
+		try:
+			super(link, city)
+		except Exception as e:
+			print(str(e))
+		time.sleep(0.5)
 
 	
 		
