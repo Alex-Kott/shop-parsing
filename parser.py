@@ -18,12 +18,7 @@ with open('data.csv', 'w') as file:
 	wr = csv.writer(file, dialect='excel', delimiter=';')
 	wr.writerow(fields)
 
-'''
-try:
-	korablik.parse()
-	print("Korablik was parsed")
-except Exception as e:
-	print("Korablik was not parsed")'''
+
 
 try:
 	okmarket.parse()
@@ -88,6 +83,12 @@ except Exception as e:
 	print(str(e))
 	print("Detmir was not parsed")
 
+
+try:
+	korablik.parse()
+	print("Korablik was parsed")
+except Exception as e:
+	print("Korablik was not parsed")
 
 
 file.close()
