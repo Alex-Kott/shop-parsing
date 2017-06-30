@@ -8,9 +8,10 @@ import csv
 def parse():
 	r = req.get("https://raw.githubusercontent.com/Alex-Kott/shop-parsing/master/content/kari.html");
 	soup = BeautifulSoup(r.text, 'lxml')
-	shop_list = soup.find(id="shop_list_all")
+	#shop_list = soup.find(id="shop_list_all")
+	kids_list = soup.find_all("li", class_="sa_item_kids")
 	
-	for li in shop_list:
+	for li in kids_list:
 		row = []
 		li = str(li)
 		li = BeautifulSoup(li, "lxml")
