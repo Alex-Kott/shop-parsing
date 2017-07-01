@@ -5,8 +5,49 @@ import csv
 import time
 
 
-
 def parse():
+	r = req.get("https://www.detmir.ru/shops/?city=0")
+	r.encoding = "utf-8"
+	soup = BeautifulSoup(r.text, "lxml")
+	result_search = soup.find("div", id="result_search")
+	shops = result_search.find_all("tr")
+	for tr in shops:
+		format_ = tr.img['alt']
+		location = tr.find(class_="address-col").contents[0]
+
+		location = location.strip()
+
+		city = re.findall(r'(.*г\.\s?\w+)', location)
+		#city = re.findall(r'\.*[^,]*', location)
+		if len(city) == 0:
+			city = ''
+			address = location
+		else:
+			city = city[0]
+			address = location.replace(city, '')
+			address = address.strip(', ')
+		schedule = tr.find(class_="shop_time_work").contents[1]
+		if city == '' and address == '':
+			continue
+
+		row = []
+		row.append(city)
+		row.append(address)
+		row.append('')
+		row.append(schedule)
+		row.append('')
+		row.append('Детский мир')
+		row.append(format_)
+
+
+		with open('data.csv', 'a') as file:
+			wr = csv.writer(file, dialect='excel', delimiter=';')
+			wr.writerow(row)
+			file.close()
+	
+
+
+def parse_old(): # парсил js-код. Это оказался неправильный путь, там в html всё нормально есть
 	r = req.get("https://www.detmir.ru/shops/?city=0")
 	r.encoding = "utf-8"
 	page = r.text

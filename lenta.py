@@ -44,6 +44,7 @@ def giper(link, city):
 		row.append(schedule)
 		row.append('')
 		row.append('Лента')
+		row.append('Гипермаркет')
 
 
 		with open('data.csv', 'a') as file:
@@ -92,6 +93,7 @@ def super(link, city):
 		row.append(schedule)
 		row.append('')
 		row.append('Лента')
+		row.append('Супермаркет')
 
 
 		with open('data.csv', 'a') as file:

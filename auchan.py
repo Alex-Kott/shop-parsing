@@ -64,6 +64,7 @@ def parse():
 							phone = re.sub(r'Телефон', '', phone)
 							phone = re.sub(r';', '', phone)
 							phone = re.sub(r'\n', ', ', phone)
+							phone = phone.strip(', ')
 							
 			row.append(address)
 			row.append(comment)
@@ -77,7 +78,10 @@ def parse():
 				file.close()
 
 		else:
+			
 			for shop_list in shop_lists:
+				markbox = shop_list.find_previous_siblings("div")[0]
+				format_ = markbox.strong.contents[0]
 				lis = shop_list.find_all('li')
 				for li in lis:
 					row = []
@@ -98,7 +102,6 @@ def parse():
 						comment = 'Ашан'
 						schedule = ''
 						phone = ''
-						format_ = ''
 						for p in ps:
 							p = p.text
 							flag = False
@@ -127,7 +130,7 @@ def parse():
 										phone = re.sub(r'Телефон', '', phone)
 										phone = re.sub(r';', '', phone)
 										phone = re.sub(r'\n', ', ', phone)
-										phone = phone.strip([', '])
+										phone = phone.strip(', ')
 						if address == '':
 							continue
 						row.append(address)

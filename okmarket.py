@@ -35,6 +35,7 @@ def parse():
 				comment = item_comment[0].contents[0]
 				comment += ""
 				row.append(comment)
+				format_ = comment.split(' ')[0]
 
 				item_schedule = item.find_all(class_="shop-list-item__time")
 				schedule = item_schedule[0].contents[0]
@@ -45,6 +46,7 @@ def parse():
 				row.append(phone)
 
 				row.append("О'КЕЙ")
+				row.append(format_)
 
 				wr.writerow(row)
 
