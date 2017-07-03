@@ -13,8 +13,11 @@ def parse():
 	shops = result_search.find_all("tr")
 	for tr in shops:
 		format_ = tr.img['alt']
-		location = tr.find(class_="address-col").contents[0]
+		contents = tr.find(class_="address-col").contents
 
+		location = " ".join(str(x) for x in contents)
+		location = re.sub(r'\s+', ' ', location)
+		location = re.sub(r'<.*>', '', location)
 		location = location.strip()
 
 		city = re.findall(r'(.*г\.\s?\w+)', location)
@@ -40,7 +43,7 @@ def parse():
 		row.append(format_)
 
 
-		with open('data.csv', 'a') as file:
+		with open('./content/detmir.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
 			wr.writerow(row)
 			file.close()
@@ -80,7 +83,10 @@ def parse_old(): # парсил js-код. Это оказался неправ�
 			wr.writerow(row)
 			file.close()
 		
-		
+	
+
+with open('./content/detmir.csv', 'w') as file:
+	file.close()
 
 if __name__ == "__main__":
 	parse()

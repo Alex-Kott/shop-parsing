@@ -22,7 +22,7 @@ def parse():
 		page = re.sub(r'\s{2,}', ' ', r.text) # а потом последовательность из более, чем одного пробела заменяем на 1 пробел
 		soup = BeautifulSoup(page, "lxml")
 		items = soup.find_all(class_="shop-list-item")
-		with open('data.csv', 'a') as file:
+		with open('./content/okmarket.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
 			for item in items:
 				row = []
@@ -54,6 +54,8 @@ def parse():
 		
 
 
+with open('./content/okmarket.csv', 'w') as file:
+	file.close()
 
 
 if __name__ == "__main__":

@@ -72,7 +72,7 @@ def parse():
 			row.append(phone)
 			row.append("Ашан")
 			row.append(format_)
-			with open('data.csv', 'a') as file:
+			with open('./content/auchan.csv', 'a') as file:
 				wr = csv.writer(file, dialect='excel', delimiter=';')
 				wr.writerow(row)
 				file.close()
@@ -139,7 +139,7 @@ def parse():
 						row.append(phone)
 						row.append(format_)
 						#print(row)
-						with open('data.csv', 'a') as file:
+						with open('./content/auchan.csv', 'a') as file:
 							wr = csv.writer(file, dialect='excel', delimiter=';')
 							wr.writerow(row)
 							file.close()
@@ -147,6 +147,9 @@ def parse():
 						a = 1
 					
 
+
+with open('./content/auchan.csv', 'w') as file:
+	file.close()
 
 if __name__ == "__main__":
 	parse()

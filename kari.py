@@ -39,12 +39,15 @@ def parse():
 		row.append(schedule)
 		row.append("")
 		row.append("Кари")
-		with open('data.csv', 'a') as file:
+		with open('./content/kari.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
 			wr.writerow(row)
 			file.close()
 
 
+
+with open('./content/kari.csv', 'w') as file:
+	file.close()
 
 if __name__ == "__main__":
 	parse()

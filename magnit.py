@@ -60,7 +60,7 @@ def section(sect):
 				row.append("Магнит")
 				row.append(format_)
 
-				with open('magnit.csv', 'a') as file:
+				with open('./content/magnit.csv', 'a') as file:
 					wr = csv.writer(file, dialect='excel', delimiter=';')
 					wr.writerow(row)
 					file.close()
@@ -73,7 +73,7 @@ def section(sect):
 
 def parse():
 
-	with open('magnit.csv', 'w') as file: # подготовим файлик очистив его перед записью
+	with open('./contents/magnit.csv', 'w') as file: # подготовим файлик очистив его перед записью
 		wr = csv.writer(file, dialect='excel', delimiter=';')
 		file.close()
 

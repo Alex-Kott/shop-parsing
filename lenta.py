@@ -47,7 +47,7 @@ def giper(link, city):
 		row.append('Гипермаркет')
 
 
-		with open('data.csv', 'a') as file:
+		with open('./content/lenta.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
 			wr.writerow(row)
 			file.close()
@@ -96,7 +96,7 @@ def super(link, city):
 		row.append('Супермаркет')
 
 
-		with open('data.csv', 'a') as file:
+		with open('./content/lenta.csv', 'a') as file:
 			wr = csv.writer(file, dialect='excel', delimiter=';')
 			wr.writerow(row)
 			file.close()
@@ -133,6 +133,9 @@ def parse():
 			file.close()'''
 		
 		
+
+with open('./content/lenta.csv', 'w') as file:
+	file.close()
 
 if __name__ == "__main__":
 	parse()

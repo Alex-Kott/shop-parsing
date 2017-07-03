@@ -42,7 +42,7 @@ def parse():
 			row.append(phone)
 			row.append("Эльдорадо")
 
-			with open('data.csv', 'a') as file:
+			with open('./content/eldorado.csv', 'a') as file:
 				wr = csv.writer(file, dialect='excel', delimiter=';')
 				wr.writerow(row)
 				file.close()
@@ -56,6 +56,9 @@ def parse():
 											file.close()'''
 		
 		
+
+with open('./content/eldorado.csv', 'w') as file:
+	file.close()
 
 if __name__ == "__main__":
 	parse()

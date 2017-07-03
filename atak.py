@@ -44,12 +44,15 @@ def parse():
 			row.append(phone)
 			row.append("АТАК")
 		
-			with open('data.csv', 'a') as file:
+			with open('./content/atak.csv', 'a') as file:
 				wr = csv.writer(file, dialect='excel', delimiter=';')
 				wr.writerow(row)
 				file.close()
 		
 		
+
+with open('./content/atak.csv', 'w') as file:
+	file.close()
 
 if __name__ == "__main__":
 	parse()
